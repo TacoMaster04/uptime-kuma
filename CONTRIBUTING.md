@@ -37,7 +37,7 @@ Different guidelines exist for different types of pull requests (PRs):
   <p>
   
   Submitting security fixes is something that may put the community at risk.
-  Please read through our [security policy](SECURITY.md) and submit vulnerabilities via an [advisory](https://github.com/louislam/uptime-kuma/security/advisories/new) + [issue](https://github.com/louislam/uptime-kuma/issues/new?assignees=&labels=help&template=security.md) instead.
+  Please read through our [security policy](SECURITY.md) and submit vulnerabilities via an [advisory](https://github.com/TacoMaster04/uptime-kuma/security/advisories/new) + [issue](https://github.com/TacoMaster04/uptime-kuma/issues/new?assignees=&labels=help&template=security.md) instead.
   We encourage you to submit how to fix a vulnerability if you know how to, this is not required.
   Following the security policy allows us to properly test, fix bugs.
   This review allows us to notice, if there are any changes necessary to unrelated parts like the documentation.  
@@ -61,12 +61,12 @@ Different guidelines exist for different types of pull requests (PRs):
   
   We use weblate to localise this project into many languages.
   If you are unhappy with a translation this is the best start.
-  On how to translate using weblate, please see [these instructions](https://github.com/louislam/uptime-kuma/blob/master/src/lang/README.md).
+  On how to translate using weblate, please see [these instructions](https://github.com/TacoMaster04/uptime-kuma/blob/master/src/lang/README.md).
   
   There are two cases in which a change cannot be done in weblate and requires a PR:
   - A text may not be currently localisable. In this case, **adding a new language key** via `$t("languageKey")` might be nessesary
   - language keys need to be **added to `en.json`** to be visible in weblate. If this has not happened, a PR is appreciated.
-  - **Adding a new language** requires a new file see [these instructions](https://github.com/louislam/uptime-kuma/blob/master/src/lang/README.md)
+  - **Adding a new language** requires a new file see [these instructions](https://github.com/TacoMaster04/uptime-kuma/blob/master/src/lang/README.md)
   
   <sub>Because maintainer time is precious junior maintainers may merge uncontroversial PRs in this area.</sub>
   </p>
@@ -172,7 +172,7 @@ I ([@louislam](https://github.com/louislam)) have the final say.
 If your pull request does not meet my expectations, I will reject it, no matter how much time you spent on it.
 Therefore, it is essential to have a discussion beforehand.
 
-I will assign your pull request to a [milestone](https://github.com/louislam/uptime-kuma/milestones), if I plan to review and merge it.
+I will assign your pull request to a [milestone](https://github.com/TacoMaster04/uptime-kuma/milestones), if I plan to review and merge it.
 
 Please don't rush or ask for an ETA.
 We have to understand the pull request, make sure it has no breaking changes and stick to the vision of this project, especially for large pull requests.
@@ -194,7 +194,7 @@ The rationale behind this is that we can align the direction and scope of the fe
 3. Create a new branch
 4. Create an empty commit: `git commit -m "<YOUR TASK NAME>" --allow-empty`
 5. Push to your fork repo
-6. Prepare a pull request: https://github.com/louislam/uptime-kuma/compare
+6. Prepare a pull request: https://github.com/TacoMaster04/uptime-kuma/compare
 7. Write a proper description. You can mention @louislam in it, so @louislam will get the notification.
 8. Create your pull request as a Draft
 9. Wait for the discussion
@@ -240,7 +240,7 @@ The goal is to make the Uptime Kuma installation as easy as installing a mobile 
 
 If you don't want to setup an local environment, you can now develop on GitHub Codespaces, read more:
 
-https://github.com/louislam/uptime-kuma/tree/master/.devcontainer
+https://github.com/TacoMaster04/uptime-kuma/tree/master/.devcontainer
 
 ## Git Branches
 
@@ -323,7 +323,7 @@ The data and socket logic are in `src/mixins/socket.js`.
 
 ## Database Migration
 
-See: https://github.com/louislam/uptime-kuma/tree/master/db/knex_migrations
+See: https://github.com/TacoMaster04/uptime-kuma/tree/master/db/knex_migrations
 
 ## Unit Test
 
@@ -359,7 +359,7 @@ Please add **all** the strings which are translatable to `src/lang/en.json` (if 
 **Don't include any other languages in your initial pull request** (even if this is your mother tongue), to avoid merge-conflicts between weblate and `master`.
 The translations can then (after merging a PR into `master`) be translated by awesome people donating their language skills.
 
-If you want to help by translating Uptime Kuma into your language, please visit the [instructions on how to translate using weblate](https://github.com/louislam/uptime-kuma/blob/master/src/lang/README.md).
+If you want to help by translating Uptime Kuma into your language, please visit the [instructions on how to translate using weblate](https://github.com/TacoMaster04/uptime-kuma/blob/master/src/lang/README.md).
 
 ## Spelling & Grammar
 
@@ -370,7 +370,7 @@ My mother language is not English and my grammar is not that great.
 
 Since there is no way to make a pull request to the wiki, I have set up another repo to do that.
 
-https://github.com/louislam/uptime-kuma-wiki
+https://github.com/TacoMaster04/uptime-kuma-wiki
 
 ## Docker
 
@@ -411,7 +411,7 @@ https://github.com/louislam/uptime-kuma-wiki
 ## Maintainer
 
 Check the latest issues and pull requests:
-https://github.com/louislam/uptime-kuma/issues?q=sort%3Aupdated-desc
+https://github.com/TacoMaster04/uptime-kuma/issues?q=sort%3Aupdated-desc
 
 ### What is a maintainer and what are their roles?
 
@@ -469,7 +469,7 @@ We have a few procedures we follow. These are documented here:
 
   These Items need to be checked:
 
-  - [ ] Check all tags is fine on https://hub.docker.com/r/louislam/uptime-kuma/tags
+  - [ ] Check all tags is fine on https://hub.docker.com/r/TacoMaster04/uptime-kuma/tags
   - [ ] Try the Docker image with tag 1.X.X (Clean install / amd64 / arm64 / armv7)
   - [ ] Try clean installation with Node.js
   
@@ -493,9 +493,9 @@ We have a few procedures we follow. These are documented here:
   **Setup Repo**
   
   ```bash
-  git clone https://github.com/louislam/uptime-kuma-wiki.git
+  git clone https://github.com/TacoMaster04/uptime-kuma-wiki.git
   cd uptime-kuma-wiki
-  git remote add production https://github.com/louislam/uptime-kuma.wiki.git
+  git remote add production https://github.com/TacoMaster04/uptime-kuma.wiki.git
   ```
   
   **Push to Production Wiki**

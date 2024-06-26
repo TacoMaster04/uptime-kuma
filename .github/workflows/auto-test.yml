@@ -45,7 +45,7 @@ jobs:
     needs: [ check-linters ]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
-    if: ${{ github.repository == 'louislam/uptime-kuma' }}
+    if: ${{ github.repository == 'TacoMaster04/uptime-kuma' }}
     strategy:
       matrix:
         os: [ ARMv7 ]

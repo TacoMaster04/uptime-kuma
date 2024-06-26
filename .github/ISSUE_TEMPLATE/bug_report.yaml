@@ -9,14 +9,14 @@ body:
       required: true
     attributes:
       label: "📑 I have found these related issues/pull requests"
-      description: "Search related issues by clicking [HERE](https://github.com/louislam/uptime-kuma/issues?q=) and explain what the difference between them or explain that you are unable to find any related issues"
+      description: "Search related issues by clicking [HERE](https://github.com/TacoMaster04/uptime-kuma/issues?q=) and explain what the difference between them or explain that you are unable to find any related issues"
       placeholder: "Related to #1 by also touching the ... system. They should not be merged because ..."
   - type: checkboxes
     attributes:
       label: "🛡️ Security Policy"
       description: Please review the security policy before reporting security related issues/bugs.
       options:
-        - label: I agree to have read this project [Security Policy](https://github.com/louislam/uptime-kuma/security/policy)
+        - label: I agree to have read this project [Security Policy](https://github.com/TacoMaster04/uptime-kuma/security/policy)
           required: true
   - type: textarea
     id: description
