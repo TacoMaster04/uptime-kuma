@@ -54,11 +54,6 @@ class Discord extends NotificationProvider {
                                 value: `<t:${unix}>`,
                                 inline: true,
                             },
-                            {
-                                name: "Error",
-                                value: heartbeatJSON["msg"] == null ? "N/A" : `\`\`\`${heartbeatJSON["msg"]}\`\`\``,
-                                inline: false,
-                            },
                         ],
                     }],
                 };
@@ -90,10 +85,6 @@ class Discord extends NotificationProvider {
                                 name: `Time (${heartbeatJSON["timezone"]})`,
                                 value: `<t:${unix}>`,
                                 inline: true,
-                            },
-                            {
-                                name: "Ping",
-                                value: heartbeatJSON["ping"] == null ? "N/A" : `\`\`\`ml\n${heartbeatJSON["ping"]} ms\`\`\``,
                             },
                         ],
                     }],
