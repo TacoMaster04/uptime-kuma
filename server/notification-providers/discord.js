@@ -46,7 +46,7 @@ class Discord extends NotificationProvider {
                         fields: [
                             {
                                 name: "Service",
-                                value: `[${monitorJSON["name"]}](${address})`,
+                                value: `[${monitorJSON["name"]}](${this.extractAdress(monitorJSON)})`,
                                 inline: true,
                             },
                             {
@@ -83,7 +83,7 @@ class Discord extends NotificationProvider {
                         fields: [
                             {
                                 name: "Service",
-                                value: `[${monitorJSON["name"]}](${address})`,
+                                value: `[${monitorJSON["name"]}](${this.extractAdress(monitorJSON)})`,
                                 inline: true,
                             },
                             {
