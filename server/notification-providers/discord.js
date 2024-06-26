@@ -34,29 +34,30 @@ class Discord extends NotificationProvider {
             }
 
             // If heartbeatJSON is not null, we go into the normal alerting loop.
+            const unix = Math.floor(new Date(heartbeatJSON["localDateTime"]).getTime() / 1000);
             if (heartbeatJSON["status"] === DOWN) {
                 let discorddowndata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "❌ Your service " + monitorJSON["name"] + " went down. ❌",
-                        color: 16711680,
+                        title: "Service Alert",
+                        color: 0xff4d4f,
                         timestamp: heartbeatJSON["time"],
+                        description: `A service alert was sent for **${monitorJSON["name"]}** for being offline. Please check the service and ensure that there is no system-wide outage.`,
                         fields: [
                             {
-                                name: "Service Name",
-                                value: monitorJSON["name"],
-                            },
-                            {
-                                name: monitorJSON["type"] === "push" ? "Service Type" : "Service URL",
-                                value: this.extractAdress(monitorJSON),
+                                name: "Service",
+                                value: `[${monitorJSON["name"]}](${address})`,
+                                inline: true,
                             },
                             {
                                 name: `Time (${heartbeatJSON["timezone"]})`,
-                                value: heartbeatJSON["localDateTime"],
+                                value: `<t:${unix}>`,
+                                inline: true,
                             },
                             {
                                 name: "Error",
-                                value: heartbeatJSON["msg"] == null ? "N/A" : heartbeatJSON["msg"],
+                                value: heartbeatJSON["msg"] == null ? "N/A" : `\`\`\`${heartbeatJSON["msg"]}\`\`\``,
+                                inline: false,
                             },
                         ],
                     }],
@@ -75,25 +76,24 @@ class Discord extends NotificationProvider {
                 let discordupdata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "✅ Your service " + monitorJSON["name"] + " is up! ✅",
-                        color: 65280,
+                        title: "Service Alert",
+                        color: 0x30c23f,
                         timestamp: heartbeatJSON["time"],
+                        description: `Received connection from **${monitorJSON["name"]}** sucessfully. Service is back online!`,
                         fields: [
                             {
-                                name: "Service Name",
-                                value: monitorJSON["name"],
-                            },
-                            {
-                                name: monitorJSON["type"] === "push" ? "Service Type" : "Service URL",
-                                value: this.extractAdress(monitorJSON),
+                                name: "Service",
+                                value: `[${monitorJSON["name"]}](${address})`,
+                                inline: true,
                             },
                             {
                                 name: `Time (${heartbeatJSON["timezone"]})`,
-                                value: heartbeatJSON["localDateTime"],
+                                value: `<t:${unix}>`,
+                                inline: true,
                             },
                             {
                                 name: "Ping",
-                                value: heartbeatJSON["ping"] == null ? "N/A" : heartbeatJSON["ping"] + " ms",
+                                value: heartbeatJSON["ping"] == null ? "N/A" : `\`\`\`ml\n${heartbeatJSON["ping"]} ms\`\`\``,
                             },
                         ],
                     }],
