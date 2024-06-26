@@ -1,6 +1,6 @@
 {
     "name": "uptime-kuma",
-    "version": "2.0.0-dev",
+    "version": "1.23.16",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -49,7 +49,7 @@
         "build-docker-nightly-local": "npm run build && docker build -f docker/dockerfile -t TacoMaster04/uptime-kuma:nightly2 --target nightly .",
         "build-docker-pr-test": "docker buildx build -f docker/dockerfile --platform linux/amd64,linux/arm64 -t TacoMaster04/uptime-kuma:pr-test2 --target pr-test2 . --push",
         "upload-artifacts": "docker buildx build -f docker/dockerfile --platform linux/amd64 -t TacoMaster04/uptime-kuma:upload-artifact --build-arg VERSION --build-arg GITHUB_TOKEN --target upload-artifact . --progress plain",
-        "setup": "git checkout 1.23.15 && npm ci --production && npm run download-dist",
+        "setup": "git checkout 1.23.16 && npm ci --production && npm run download-dist",
         "download-dist": "node extra/download-dist.js",
         "mark-as-nightly": "node extra/mark-as-nightly.js",
         "reset-password": "node extra/reset-password.js",
