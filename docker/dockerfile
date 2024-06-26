@@ -1,16 +1,16 @@
-ARG BASE_IMAGE=TacoMaster04/uptime-kuma:base2
+ARG BASE_IMAGE=tacomaster04/uptime-kuma:base2
 
 ############################################
 # Build in Golang
 # Run npm run build-healthcheck-armv7 in the host first, otherwise it will be super slow where it is building the armv7 healthcheck
 # Check file: builder-go.dockerfile
 ############################################
-FROM TacoMaster04/uptime-kuma:builder-go AS build_healthcheck
+FROM tacomaster04/uptime-kuma:builder-go AS build_healthcheck
 
 ############################################
 # Build in Node.js
 ############################################
-FROM TacoMaster04/uptime-kuma:base2 AS build
+FROM tacomaster04/uptime-kuma:base2 AS build
 USER node
 WORKDIR /app
 
@@ -59,7 +59,7 @@ USER node
 ############################################
 # Build an image for testing pr
 ############################################
-FROM TacoMaster04/uptime-kuma:base2 AS pr-test2
+FROM tacomaster04/uptime-kuma:base2 AS pr-test2
 WORKDIR /app
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
@@ -88,7 +88,7 @@ CMD ["npm", "run", "start-pr-test"]
 ############################################
 # Upload the artifact to Github
 ############################################
-FROM TacoMaster04/uptime-kuma:base2 AS upload-artifact
+FROM tacomaster04/uptime-kuma:base2 AS upload-artifact
 WORKDIR /
 RUN apt update && \
     apt --yes install curl file

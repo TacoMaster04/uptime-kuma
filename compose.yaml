@@ -1,6 +1,6 @@
 services:
   uptime-kuma:
-    image: TacoMaster04/uptime-kuma:1
+    image: tacomaster04/uptime-kuma:1
     volumes:
       - ./data:/app/data
     ports:
